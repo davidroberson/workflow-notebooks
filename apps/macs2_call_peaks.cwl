@@ -22,8 +22,10 @@ requirements:
   listing:
   - entryname: call_peaks.sh
     writable: false
-    entry: 'macs2 callpeak -t $(inputs.bam.path) -n $(inputs.bam.nameroot).macs2 -f
-      BAM -g hs -p .1 --call-summits --outdir ./
+    entry: 'conda activate macs-py2.7
+
+      macs2 callpeak -t $(inputs.bam.path) -n $(inputs.bam.nameroot).macs2 -f BAM
+      -g hs -p .1 --call-summits --outdir ./
 
 
       #Sort narrowPeak file
