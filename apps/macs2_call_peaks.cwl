@@ -19,7 +19,6 @@ requirements:
 - class: DockerRequirement
   dockerPull: images.sb.biodatacatalyst.nhlbi.nih.gov/andrewblair/cardiac-compendium:2023042401
 - class: InitialWorkDirRequirement
-- class: InitialWorkDirRequirement
   listing:
   - entryname: call_peaks.sh
     writable: false
