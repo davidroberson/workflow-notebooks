@@ -7,17 +7,13 @@ inputs:
   sbg:fileTypes: BAM
   secondaryFiles:
   - pattern: .bai
-    required: true
 - id: chr_sizes
   type: File
-  required: true
 - id: regions_blocklist
   type: File
-  required: true
   sbg:fileTypes: BED
 - id: regions_includelist
   type: File
-  required: true
   sbg:fileTypes: BED
 baseCommand:
 - bash
@@ -52,10 +48,14 @@ requirements:
       --nStrongestPeaks 3000 '
 - class: InlineJavascriptRequirement
 outputs:
-- id: macs2_outputs
-  type: File[]?
+- id: candidate_regions
+  type: File
   outputBinding:
-    glob: '*.macs2*'
+    glob: '*candidateRegions.bed'
+- id: counts
+  type: File
+  outputBinding:
+    glob: '*Counts.bed'
 cwlVersion: v1.2
 class: CommandLineTool
 $namespaces:
