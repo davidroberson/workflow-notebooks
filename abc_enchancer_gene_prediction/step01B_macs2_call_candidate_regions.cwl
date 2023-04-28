@@ -25,6 +25,9 @@ inputs:
 - id: regions_includelist
   type: File
   sbg:fileTypes: BED
+baseCommand:
+- bash
+- call_candidate_regions.sh
 requirements:
 - class: ShellCommandRequirement
 - class: InlineJavascriptRequirement
