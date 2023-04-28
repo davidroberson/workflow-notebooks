@@ -61,7 +61,7 @@ requirements:
     writable: false
     entry: '
 
-      python src/run.neighborhoods.py \
+      python /usr/src/app/src/run.neighborhoods.py \
 
       --candidate_enhancer_regions $(inputs.candidate_enchancer_regions.path) \
 
