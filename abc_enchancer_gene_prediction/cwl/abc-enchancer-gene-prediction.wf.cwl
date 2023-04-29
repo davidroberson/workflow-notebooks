@@ -81,3 +81,19 @@ steps:
   - id: summits
   sbg:x: -329
   sbg:y: -441
+- id: run_neighborhoods
+  label: Run Neighborhoods
+  in:
+  - id: candidate_enchancer_regions
+    source: makecandidateregions/candidate_regions
+  - id: genes
+  - id: H3K27ac
+  - id: dhs
+  - id: expression_table
+  - id: chrom_sizes
+  - id: ubiquitously_expressed_genes
+  - id: cell_type
+  run: step02_run_neighborhoods.tool.cwl
+  out:
+  - id: enchancer_list
+  - id: counts
