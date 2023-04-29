@@ -36,11 +36,10 @@ inputs:
 - id: expression_table
   type: File
   doc: K562.ENCFF934YBO.TPM.txt
-  sbg:fileTypes: BAM
-  secondaryFiles:
-  - pattern: .bai
 - id: chrom_sizes
   type: File
+  secondaryFiles:
+  - pattern: .bed
 - id: ubiquitously_expressed_genes
   type: File
   doc: UbiquitouslyExpressedGenesHG19.txt
@@ -54,7 +53,7 @@ requirements:
 - class: ShellCommandRequirement
 - class: InlineJavascriptRequirement
 - class: DockerRequirement
-  dockerPull: images.sb.biodatacatalyst.nhlbi.nih.gov/andrewblair/cardiac-compendium:2023042401
+  dockerPull: images.sb.biodatacatalyst.nhlbi.nih.gov/andrewblair/cardiac-compendium:2023042901
 - class: InitialWorkDirRequirement
   listing:
   - entryname: run.neighborhoods.sh

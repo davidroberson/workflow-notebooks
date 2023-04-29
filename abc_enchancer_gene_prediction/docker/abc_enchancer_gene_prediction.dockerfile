@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 #RUN pip2 install --no-cache-dir numpy
 RUN pip3 install Cython
 RUN pip3 install --no-cache-dir numpy pandas scipy pyBigWig pyranges
-#RUN pip2 install pysam
+RUN pip3 install pysam
 
 # Setup samtools
 RUN wget -O samtools-0.1.19.tar.bz2 https://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2/download &&  tar xjf samtools-0.1.19.tar.bz2 && cd  /usr/src/app/samtools-0.1.19 &&  make -j 4
@@ -40,3 +40,5 @@ RUN conda env create -f abcenv.yml
 
 # Copy the required scripts
 COPY src/ src/
+#Copy the Dockerfile for reproducibility
+COPY Dockerfile Dockerfile
