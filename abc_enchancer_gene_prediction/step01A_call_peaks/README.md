@@ -1,21 +1,34 @@
----
-title: "ABC Pipeline"
-output: github_document
----
+Step 01A Call Peaks
+================
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+## Intro
 
-## GitHub Documents
+This notebook is a walkthrough of describing 1 of the steps in the ABC
+Enhancer Gene Prediction model
 
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+[broadinstitute/ABC-Enhancer-Gene-Prediction: Cell type specific
+enhancer-gene predictions using ABC model (Fulco, Nasser et al, Nature
+Genetics
+2019)](https://github.com/broadinstitute/ABC-Enhancer-Gene-Prediction)
 
-## Including Code
+We wrap the macs call peaks step. The example code in the github repo is
+this
 
-You can include R code in the document as follows:
+    macs2 callpeak \
+    -t example_chr22/input_data/Chromatin/wgEncodeUwDnaseK562AlnRep1.chr22.bam \
+    -n wgEncodeUwDnaseK562AlnRep1.chr22.macs2 \
+    -f BAM \
+    -g hs \
+    -p .1 \
+    --call-summits \
+    --outdir example_chr22/ABC_output/Peaks/ 
 
-```{r cars}
+    #Sort narrowPeak file
+    bedtools sort -faidx example_chr22/reference/chr22 -i example_chr22/ABC_output/Peaks/wgEncodeUwDnaseK562AlnRep1.chr22.macs2_peaks.narrowPeak > example_chr22/ABC_output/Peaks/wgEncodeUwDnaseK562AlnRep1.chr22.macs2_peaks.narrowPeak.sorted
+
+## Rcwl code
+
+``` r
 library(Rcwl)
 library(tidyverse)
 
@@ -44,16 +57,4 @@ call_peaks_tool <- cwlProcess(baseCommand = list("bash", "call_peaks.sh"),
 Rcwl::writeCWL(call_peaks_tool, outdir = "../cwl")
 system("mv ../cwl/call_peaks_tool.cwl ../cwl/call_peaks_tool.cwl.yml")
 #system("~/.local/bin/sbpack bdc dave/abc-development-scratch-project/macs2-call-peaks ../cwl/call_peaks_tool.cwl.yml")
-
-
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
