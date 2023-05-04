@@ -37,12 +37,9 @@ input_sort_order <- InputParam(id = "sort_order", type = "File")
 
 output_sorted_peaks <- OutputParam(id = "sorted_peaks", type = "File", glob = '*narrowPeak.sorted')
 
-script = read_file("step_01A_call_peaks.sh")
+call_peaks_script = Dirent(entryname = "call_peaks.sh", read_file("files/step_01A_call_peaks.sh"), writable = FALSE)
 
-call_peaks_script = Dirent(entryname = "call_peaks.sh", read_file("step_01A_call_peaks.sh"), writable = FALSE)
-
-hints = list(class = "sbg:SaveLogs", 
-                value = "*.sh")
+hints = list(class = "sbg:SaveLogs", value = "*.sh")
 
 call_peaks_tool <- cwlProcess(baseCommand = list("bash", "call_peaks.sh"),
                     inputs = InputParamList(input_bam, input_sort_order),
@@ -53,8 +50,13 @@ call_peaks_tool <- cwlProcess(baseCommand = list("bash", "call_peaks.sh"),
                                         requireShellCommand(),
                                         requireInitialWorkDir(list(call_peaks_script))
                                         ))
+```
 
-Rcwl::writeCWL(call_peaks_tool, outdir = "../cwl")
+## Write CWL files and push to a Seven Bridges platform
+
+``` r
+Rcwl::writeCWL(call_peaks_tool, outdir = "files")
 system("mv ../cwl/call_peaks_tool.cwl ../cwl/call_peaks_tool.cwl.yml")
-#system("~/.local/bin/sbpack bdc dave/abc-development-scratch-project/macs2-call-peaks ../cwl/call_peaks_tool.cwl.yml")
+
+system("~/.local/bin/sbpack bdc dave/abc-development-scratch-project/macs2-call-peaks files/call_peaks_tool.cwl")
 ```
