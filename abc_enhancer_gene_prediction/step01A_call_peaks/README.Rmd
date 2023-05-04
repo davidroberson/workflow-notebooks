@@ -29,6 +29,15 @@ macs2 callpeak \
 bedtools sort -faidx example_chr22/reference/chr22 -i example_chr22/ABC_output/Peaks/wgEncodeUwDnaseK562AlnRep1.chr22.macs2_peaks.narrowPeak > example_chr22/ABC_output/Peaks/wgEncodeUwDnaseK562AlnRep1.chr22.macs2_peaks.narrowPeak.sorted
 ```
 
+## Shell script is used in the tool  
+
+Notice the inline javascript such as ```$(inputs.bam.nameroot)```
+
+```{bash, engine.opts='-l', echo=FALSE}
+pwd
+cat abc_enhancer_gene_prediction/step01A_call_peaks/files/step_01A_call_peaks.sh
+```
+
 
 ## Rcwl code
 
@@ -46,7 +55,7 @@ InputParam(id = "sort_order", type = "File")
 #output ports
 output_ports = list(
 OutputParam(id = "sorted_peaks", type = "File", glob = '*narrowPeak.sorted'),
-out_model_r_script = OutputParam(id = "model_r_scripts", type = "File", glob = '*model.r'),
+OutputParam(id = "model_r_scripts", type = "File", glob = '*model.r'),
 OutputParam(id = "peak_xls", type = "File", glob = '*peak.xls'),
 OutputParam(id = "summits", type = "File", glob = '*summits.bed')
 )
@@ -71,13 +80,13 @@ call_peaks_tool <- cwlProcess(baseCommand = list("bash", "call_peaks.sh"),
 
 ## Write CWL files and push to a Seven Bridges platform
 
-
 ```{r eval=FALSE}
 
 
 Rcwl::writeCWL(call_peaks_tool, outdir = "files")
 
 system("~/.local/bin/sbpack bdc dave/abc-development-scratch-project/macs2-call-peaks files/call_peaks_tool.cwl")
+system("rm files/call_peaks_tool.yml")
 
 ```
 
