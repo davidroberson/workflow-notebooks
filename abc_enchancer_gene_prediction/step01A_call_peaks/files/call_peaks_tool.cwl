@@ -44,3 +44,15 @@ outputs:
     type: File
     outputBinding:
       glob: '*narrowPeak.sorted'
+  model_r_scripts:
+    type: File
+    outputBinding:
+      glob: '*model.r'
+  peak_xls:
+    type: File
+    outputBinding:
+      glob: '*peak.xls'
+  summits:
+    type: File
+    outputBinding:
+      glob: '*summits.bed'
