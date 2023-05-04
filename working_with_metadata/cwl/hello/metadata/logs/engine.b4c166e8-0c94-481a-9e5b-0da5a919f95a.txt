@@ -1,0 +1,6 @@
+[2023-05-02T17:04:29,321.607113Z] [cwltool] /home/codespace/.python/current/bin/cwltool --provenance ./hello hello_world.cwl
+[2023-05-02T17:04:29,324.324369Z] Resolved 'hello_world.cwl' to 'file:///workspaces/workflow-notebooks/working_with_metadata/cwl/hello_world.cwl'
+[2023-05-02T17:04:30,564.213991Z] [job hello_world.cwl] /tmp/c0boygtj$ touch \
+    Hello.txt
+[2023-05-02T17:04:30,567.327738Z] [job hello_world.cwl] completed success
+[2023-05-02T17:04:30,847.985983Z] Final process status is success

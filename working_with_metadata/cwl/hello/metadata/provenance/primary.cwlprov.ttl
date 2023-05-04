@@ -1,0 +1,67 @@
+@prefix cwlprov: <https://w3id.org/cwl/prov#> .
+@prefix data: <urn:hash::sha1:> .
+@prefix id: <urn:uuid:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wf: <arcp://uuid,269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc/workflow/packed.cwl#> .
+@prefix wf4ever: <http://purl.org/wf4ever/wf4ever#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+id:c7a1568b-22d9-482f-b3d3-e5dbfbca7ab8 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc ;
+            prov:atTime "2023-05-02T17:04:30.568274"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc/workflow/packed.cwl#main/primary/blar> ] ;
+    prov:specializationOf data:da39a3ee5e6b4b0d3255bfef95601890afd80709 ;
+    cwlprov:basename "Hello.txt"^^xsd:string ;
+    cwlprov:nameext ".txt"^^xsd:string ;
+    cwlprov:nameroot "Hello"^^xsd:string .
+
+wf:main a wfdesc:Process,
+        prov:Entity,
+        prov:Plan ;
+    rdfs:label "Prospective provenance"^^xsd:string .
+
+data:da39a3ee5e6b4b0d3255bfef95601890afd80709 a wfprov:Artifact,
+        prov:Entity .
+
+id:269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc a wfprov:WorkflowRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan wf:main ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2023-05-02T17:04:30.568988"^^xsd:dateTime ;
+            prov:hadActivity id:b4c166e8-0c94-481a-9e5b-0da5a919f95a ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2023-05-02T17:04:30.562000"^^xsd:dateTime ;
+            prov:hadActivity id:b4c166e8-0c94-481a-9e5b-0da5a919f95a ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2023-05-02T17:04:30.563712"^^xsd:dateTime ;
+            prov:entity data:ec4f16b232098b26fde94c487cf202e118f4564e ;
+            prov:hadRole <arcp://uuid,269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc/workflow/packed.cwl#main/message> ],
+        [ a prov:Usage ;
+            prov:atTime "2023-05-02T17:04:30.564701"^^xsd:dateTime ;
+            prov:entity data:ec4f16b232098b26fde94c487cf202e118f4564e ;
+            prov:hadRole <arcp://uuid,269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc/workflow/packed.cwl#main/hello_world.cwl/message> ] ;
+    prov:startedAtTime "2023-05-02T17:04:30.561924"^^xsd:dateTime ;
+    prov:wasAssociatedWith id:b4c166e8-0c94-481a-9e5b-0da5a919f95a .
+
+id:d44300b4-1300-46ed-a4d3-587815565e81 a prov:Agent .
+
+data:ec4f16b232098b26fde94c487cf202e118f4564e a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "Hello.txt"^^xsd:string .
+
+id:b4c166e8-0c94-481a-9e5b-0da5a919f95a a wfprov:WorkflowEngine,
+        prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "cwltool 3.1.20230425144158"^^xsd:string ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2023-05-02T17:04:30.561886"^^xsd:dateTime ;
+            prov:hadActivity id:d44300b4-1300-46ed-a4d3-587815565e81 ] .
+

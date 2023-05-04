@@ -1,0 +1,34 @@
+document
+  prefix wfprov <http://purl.org/wf4ever/wfprov#>
+  prefix wfdesc <http://purl.org/wf4ever/wfdesc#>
+  prefix cwlprov <https://w3id.org/cwl/prov#>
+  prefix foaf <http://xmlns.com/foaf/0.1/>
+  prefix schema <http://schema.org/>
+  prefix orcid <https://orcid.org/>
+  prefix id <urn:uuid:>
+  prefix data <urn:hash::sha1:>
+  prefix sha256 <nih:sha-256;>
+  prefix researchobject <arcp://uuid,269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc/>
+  prefix metadata <arcp://uuid,269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc/metadata/>
+  prefix provenance <arcp://uuid,269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc/metadata/provenance/>
+  prefix wf <arcp://uuid,269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc/workflow/packed.cwl#>
+  prefix input <arcp://uuid,269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc/workflow/primary-job.json#>
+  prefix wf4ever <http://purl.org/wf4ever/wf4ever#>
+  
+  agent(id:d44300b4-1300-46ed-a4d3-587815565e81)
+  agent(id:b4c166e8-0c94-481a-9e5b-0da5a919f95a, [prov:type='wfprov:WorkflowEngine', prov:type='prov:SoftwareAgent', prov:label="cwltool 3.1.20230425144158"])
+  wasStartedBy(id:b4c166e8-0c94-481a-9e5b-0da5a919f95a, -, id:d44300b4-1300-46ed-a4d3-587815565e81, 2023-05-02T17:04:30.561886)
+  activity(id:269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc, 2023-05-02T17:04:30.561924, -, [prov:type='wfprov:WorkflowRun', prov:label="Run of workflow/packed.cwl#main"])
+  wasAssociatedWith(id:269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc, id:b4c166e8-0c94-481a-9e5b-0da5a919f95a, wf:main)
+  wasStartedBy(id:269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc, -, id:b4c166e8-0c94-481a-9e5b-0da5a919f95a, 2023-05-02T17:04:30.562000)
+  entity(wf:main, [prov:type='wfdesc:Process', prov:type='prov:Plan', prov:label="Prospective provenance"])
+  entity(data:ec4f16b232098b26fde94c487cf202e118f4564e, [prov:type='wfprov:Artifact', prov:value="Hello.txt"])
+  used(id:269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc, data:ec4f16b232098b26fde94c487cf202e118f4564e, 2023-05-02T17:04:30.563712, [prov:role='wf:main/message'])
+  entity(data:ec4f16b232098b26fde94c487cf202e118f4564e, [prov:type='wfprov:Artifact', prov:value="Hello.txt"])
+  used(id:269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc, data:ec4f16b232098b26fde94c487cf202e118f4564e, 2023-05-02T17:04:30.564701, [prov:role='wf:main/hello_world.cwl/message'])
+  entity(data:da39a3ee5e6b4b0d3255bfef95601890afd80709, [prov:type='wfprov:Artifact'])
+  entity(id:c7a1568b-22d9-482f-b3d3-e5dbfbca7ab8, [prov:type='wfprov:Artifact', prov:type='wf4ever:File', cwlprov:basename="Hello.txt", cwlprov:nameroot="Hello", cwlprov:nameext=".txt"])
+  specializationOf(id:c7a1568b-22d9-482f-b3d3-e5dbfbca7ab8, data:da39a3ee5e6b4b0d3255bfef95601890afd80709)
+  wasGeneratedBy(id:c7a1568b-22d9-482f-b3d3-e5dbfbca7ab8, id:269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc, 2023-05-02T17:04:30.568274, [prov:role='wf:main/primary/blar'])
+  wasEndedBy(id:269c4fcf-2da1-4b86-bdb4-6b6eb2bbd8fc, -, id:b4c166e8-0c94-481a-9e5b-0da5a919f95a, 2023-05-02T17:04:30.568988)
+endDocument

@@ -1,0 +1,18 @@
+# cwltool --outdir exec vcf-to-gds-wf.cwl job-vcf-to-gds.yml
+fastq_list:
+  - class: File
+    path: //input_data/example_human_Illumina.pe_1.fastq
+    metadata: 
+      library_id : Test Lib ID
+      paired_end : 1
+      sample_id : EXAMPLE
+      sbg_public_files_category : test
+      species" : Homo sapiens
+  - class: File
+    path: ../input_data/example_human_Illumina.pe_2.fastq
+    metadata: 
+      library_id : Test Lib ID
+      paired_end : 2
+      sample_id : EXAMPLE
+      sbg_public_files_category : test
+      species" : Homo sapiens

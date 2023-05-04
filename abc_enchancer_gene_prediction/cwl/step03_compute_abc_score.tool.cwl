@@ -38,7 +38,7 @@ requirements:
 - class: ShellCommandRequirement
 - class: InlineJavascriptRequirement
 - class: DockerRequirement
-  dockerPull: images.sb.biodatacatalyst.nhlbi.nih.gov/andrewblair/cardiac-compendium:2023042901
+  dockerPull: images.sb.biodatacatalyst.nhlbi.nih.gov/andrewblair/cardiac-compendium:2023050101
 - class: InitialWorkDirRequirement
   listing:
   - entryname: predict.sh
@@ -67,7 +67,23 @@ requirements:
 
       --make_all_putative'
 outputs:
-- id: enchancer_list
+- id: all_putattive_predictions
   type: File
   outputBinding:
-    glob: '*EnhancerList.txt'
+    glob: '*EnhancerPredictionsAllPutative.txt.gz'
+- id: ForVariantOverlap_shrunk150bp
+  type: File
+  outputBinding:
+    glob: '*ForVariantOverlap.shrunk150bp.txt.gz'
+- id: all_putative_nonexpressed
+  type: File
+  outputBinding:
+    glob: '*AllPutativeNonExpressedGenes.txt.gz'
+- id: enhancer_predictions
+  type: File
+  outputBinding:
+    glob: '*.bedpe'
+- id: other_outputs_enhancer_predictions
+  type: File
+  outputBinding:
+    glob: '*.txt'
