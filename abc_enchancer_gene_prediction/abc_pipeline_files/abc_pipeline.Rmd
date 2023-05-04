@@ -1,0 +1,59 @@
+---
+title: "ABC Pipeline"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r cars}
+library(Rcwl)
+library(tidyverse)
+
+input_bam <- InputParam(id = "bam", type = "File")
+input_sort_order <- InputParam(id = "sort_order", type = "File")
+
+output_sorted_peaks <- OutputParam(id = "sorted_peaks", type = "File", glob = '*narrowPeak.sorted')
+
+script = read_file("step_01A_call_peaks.sh")
+
+call_peaks_script = Dirent(entryname = "call_peaks.sh", read_file("step_01A_call_peaks.sh"), writable = FALSE)
+
+hints = list(class = "sbg:SaveLogs", 
+                value = "*.sh")
+
+call_peaks_tool <- cwlProcess(baseCommand = list("bash", "call_peaks.sh"),
+                    inputs = InputParamList(input_bam, input_sort_order),
+                    outputs = OutputParamList(output_sorted_peaks),
+                    hints = list(hints),
+                    requirements = list(requireDocker("images.sb.biodatacatalyst.nhlbi.nih.gov/andrewblair/cardiac-compendium:2023042401"), 
+                                        requireJS(),
+                                        requireShellCommand(),
+                                        requireInitialWorkDir(list(call_peaks_script))
+                                        ))
+
+Rcwl::writeCWL(call_peaks_tool, outdir = "../cwl")
+system("mv ../cwl/call_peaks_tool.cwl ../cwl/call_peaks_tool.cwl.yml")
+#system("~/.local/bin/sbpack bdc dave/abc-development-scratch-project/macs2-call-peaks ../cwl/call_peaks_tool.cwl.yml")
+
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
