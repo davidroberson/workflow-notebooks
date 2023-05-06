@@ -3,3 +3,4 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("Rcwl")
 
 system("pip3 install sbpack")
+
