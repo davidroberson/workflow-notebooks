@@ -8,16 +8,14 @@ input_ports = list(
              secondaryFiles = list(pattern = ".bai"), value = list("BAM")),
   InputParam(id = "chr_sizes", type = "File"),
   InputParam(id = "regions_blocklist", type = "File"),
-  InputParam(id = "regions_includelist", type = "File")
-)
+  InputParam(id = "regions_includelist", type = "File"))
 
 #output ports
 output_ports = list(
   OutputParam(id = "candidate_regions", type = "File", 
               glob = '*candidateRegions.bed'),
   OutputParam(id = "counts", type = "File", 
-              glob = '*Counts.bed')
-)
+              glob = '*Counts.bed'))
 
 #requirements
 docker = "images.sb.biodatacatalyst.nhlbi.nih.gov/andrewblair/cardiac-compendium:2023042401"
@@ -41,6 +39,9 @@ make_candidate_regions <- addMeta(
   cwl = make_candidate_regions,
   label = " MACS2 Call Candidate Regions",
   doc = read_file("doc.md"))
+
+#$namespaces:
+#sbg: https://sevenbridges.com
 
 #write cwl to file
 writeCWL(make_candidate_regions, outdir = "./")

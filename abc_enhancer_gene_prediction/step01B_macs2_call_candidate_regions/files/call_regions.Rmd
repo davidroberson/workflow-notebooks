@@ -65,10 +65,11 @@ make_candidate_regions <- cwlProcess(
     requireInitialWorkDir(list(shell_script))),
   hints = list(hints))
 
-
 make_candidate_regions <- addMeta(
   cwl = make_candidate_regions,
   label = " MACS2 Call Candidate Regions")
+
+
 
 #write cwl to file
 writeCWL(make_candidate_regions, outdir = "./")
