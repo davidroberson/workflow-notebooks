@@ -73,8 +73,7 @@ call_peaks_tool <- cwlProcess(baseCommand = list("bash", "call_peaks.sh"),
                     requirements = list(requireDocker(docker), 
                                         requireJS(),
                                         requireShellCommand(),
-                                        requireInitialWorkDir(list(call_peaks_script))
-                                        ))
+                                        requireInitialWorkDir(list(call_peaks_script))))
 
 ```
 
@@ -82,11 +81,10 @@ call_peaks_tool <- cwlProcess(baseCommand = list("bash", "call_peaks.sh"),
 
 ```{r eval=FALSE}
 
+system("pwd")
+system("~/.local/bin/sbpack bdc dave/abc-development-scratch-project/abc_workflow cwl/abc_workflow.cwl")
+system("~/.local/bin/cwlpack cwl/abc_workflow.cwl")
 
-Rcwl::writeCWL(call_peaks_tool, outdir = "files")
-
-system("~/.local/bin/sbpack bdc dave/abc-development-scratch-project/macs2-call-peaks files/call_peaks_tool.cwl")
-system("rm files/call_peaks_tool.yml")
 
 ```
 
