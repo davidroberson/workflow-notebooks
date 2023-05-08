@@ -94,23 +94,23 @@ steps:
   sbg:y: 413.46484375
 sbg:appVersion:
 - v1.2
-sbg:content_hash: a328cca8371a14be9cdd892295325b1984614136a017292dbd1fb591accd1cb39
+sbg:content_hash: a8046ae9f53a97b07778700132c3ad68e2f9bcc1c4953e917eac8c7ab1c9a75ce
 sbg:contributors:
 - dave
 sbg:createdBy: dave
 sbg:createdOn: 1683484068
-sbg:id: dave/abc-development-scratch-project/abc_step01/7
+sbg:id: dave/abc-development-scratch-project/abc_step01/8
 sbg:image_url: |-
-  https://platform.sb.biodatacatalyst.nhlbi.nih.gov/ns/brood/images/dave/abc-development-scratch-project/abc_step01/7.png
-sbg:latestRevision: 7
+  https://platform.sb.biodatacatalyst.nhlbi.nih.gov/ns/brood/images/dave/abc-development-scratch-project/abc_step01/8.png
+sbg:latestRevision: 8
 sbg:modifiedBy: dave
-sbg:modifiedOn: 1683553423
-sbg:original_source: dave/abc-development-scratch-project/abc_step01/7
+sbg:modifiedOn: 1683554138
+sbg:original_source: dave/abc-development-scratch-project/abc_step01/8
 sbg:project: dave/abc-development-scratch-project
 sbg:projectName: ABC - Development Scratch Project
 sbg:publisher: sbg
-sbg:revision: 7
-sbg:revisionNotes: '"python3 now"'
+sbg:revision: 8
+sbg:revisionNotes: ''
 sbg:revisionsInfo:
 - sbg:modifiedBy: dave
   sbg:modifiedOn: 1683484068
@@ -154,6 +154,10 @@ sbg:revisionsInfo:
   sbg:modifiedOn: 1683553423
   sbg:revision: 7
   sbg:revisionNotes: '"python3 now"'
+- sbg:modifiedBy: dave
+  sbg:modifiedOn: 1683554138
+  sbg:revision: 8
+  sbg:revisionNotes: ''
 sbg:sbgMaintained: false
 sbg:validationErrors: []
 sbg:workflowLanguage: CWL

@@ -194,23 +194,23 @@ steps:
   sbg:y: 202.2452850341797
 sbg:appVersion:
 - v1.2
-sbg:content_hash: a5b946e0b6d9c68e8180589776f596586ee9c6b7b9513adbcfc7ab4b55d59ac50
+sbg:content_hash: a9d3487b2f2ca19fb3a336bcc89c973d47b78aa08c64483cabf5f0f2f8b213a8d
 sbg:contributors:
 - dave
 sbg:createdBy: dave
 sbg:createdOn: 1682359121
-sbg:id: dave/abc-development-scratch-project/abc-enchancer-gene-prediction/30
+sbg:id: dave/abc-development-scratch-project/abc-enchancer-gene-prediction/32
 sbg:image_url: |-
-  https://platform.sb.biodatacatalyst.nhlbi.nih.gov/ns/brood/images/dave/abc-development-scratch-project/abc-enchancer-gene-prediction/30.png
-sbg:latestRevision: 30
+  https://platform.sb.biodatacatalyst.nhlbi.nih.gov/ns/brood/images/dave/abc-development-scratch-project/abc-enchancer-gene-prediction/32.png
+sbg:latestRevision: 32
 sbg:modifiedBy: dave
-sbg:modifiedOn: 1683553647
+sbg:modifiedOn: 1683559403
 sbg:original_source: |-
-  https://api.sb.biodatacatalyst.nhlbi.nih.gov/v2/apps/dave/abc-development-scratch-project/abc-enchancer-gene-prediction/30/raw/
+  https://api.sb.biodatacatalyst.nhlbi.nih.gov/v2/apps/dave/abc-development-scratch-project/abc-enchancer-gene-prediction/32/raw/
 sbg:project: dave/abc-development-scratch-project
 sbg:projectName: ABC - Development Scratch Project
 sbg:publisher: sbg
-sbg:revision: 30
+sbg:revision: 32
 sbg:revisionNotes: ''
 sbg:revisionsInfo:
 - sbg:modifiedBy: dave
@@ -361,6 +361,14 @@ sbg:revisionsInfo:
 - sbg:modifiedBy: dave
   sbg:modifiedOn: 1683553647
   sbg:revision: 30
+  sbg:revisionNotes: ''
+- sbg:modifiedBy: dave
+  sbg:modifiedOn: 1683554156
+  sbg:revision: 31
+  sbg:revisionNotes: ''
+- sbg:modifiedBy: dave
+  sbg:modifiedOn: 1683559403
+  sbg:revision: 32
   sbg:revisionNotes: ''
 sbg:sbgMaintained: false
 sbg:validationErrors: []

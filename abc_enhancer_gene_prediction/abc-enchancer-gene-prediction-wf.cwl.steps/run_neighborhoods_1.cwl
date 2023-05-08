@@ -26,7 +26,7 @@ requirements:
     writable: false
     entry: |2-
 
-      python src/run.neighborhoods.py \
+      python python3 /usr/src/app/src/run.neighborhoods.py \
       --candidate_enhancer_regions $(inputs.candidate_enchancer_regions.path) \
       --genes $(inputs.genes.path) \
       --H3K27ac $(inputs.H3K27ac.path) \
@@ -91,24 +91,24 @@ baseCommand:
 hints:
 - class: sbg:SaveLogs
   value: '*.sh'
-id: dave/abc-development-scratch-project/run-neighborhoods/8
+id: dave/abc-development-scratch-project/run-neighborhoods/9
 sbg:appVersion:
 - v1.2
-sbg:content_hash: acffc97dcd12c545e80106202b9f431112c1a5bd5494f6d5ef62c8ed9e39309e6
+sbg:content_hash: af9c21a353ca015388bc07ca362a66a5a675c69a9f3a022f113dad3a92f9114cb
 sbg:contributors:
 - dave
 sbg:createdBy: dave
 sbg:createdOn: 1682694903
-sbg:id: dave/abc-development-scratch-project/run-neighborhoods/8
+sbg:id: dave/abc-development-scratch-project/run-neighborhoods/9
 sbg:image_url:
-sbg:latestRevision: 8
+sbg:latestRevision: 9
 sbg:modifiedBy: dave
-sbg:modifiedOn: 1683552521
+sbg:modifiedOn: 1683559314
 sbg:project: dave/abc-development-scratch-project
 sbg:projectName: ABC - Development Scratch Project
 sbg:publisher: sbg
-sbg:revision: 8
-sbg:revisionNotes: ''
+sbg:revision: 9
+sbg:revisionNotes: correcting python command
 sbg:revisionsInfo:
 - sbg:modifiedBy: dave
   sbg:modifiedOn: 1682694903
@@ -176,6 +176,10 @@ sbg:revisionsInfo:
   sbg:modifiedOn: 1683552521
   sbg:revision: 8
   sbg:revisionNotes: ''
+- sbg:modifiedBy: dave
+  sbg:modifiedOn: 1683559314
+  sbg:revision: 9
+  sbg:revisionNotes: correcting python command
 sbg:sbgMaintained: false
 sbg:validationErrors: []
 sbg:workflowLanguage: CWL

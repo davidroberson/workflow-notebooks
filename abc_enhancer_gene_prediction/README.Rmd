@@ -13,7 +13,7 @@ This notebook is a walk through of describing the steps in the ABC Enhancer Gene
 
 [broadinstitute/ABC-Enhancer-Gene-Prediction: Cell type specific enhancer-gene predictions using ABC model (Fulco, Nasser et al, Nature Genetics 2019)](https://github.com/broadinstitute/ABC-Enhancer-Gene-Prediction)  
 
-```{r echo=FALSE, message}
+```{r echo=FALSE, message=FALSE, eval=FALSE}
 system("pip3 install sbpack")
 
 install.packages("tidycwl")
@@ -26,9 +26,31 @@ install.packages("tidycwl")
 ```{r eval=FALSE}
 
 system("pwd")
-system("~/.local/bin/sbpack bdc dave/abc-development-scratch-project/abc_workflow cwl/abc_workflow.cwl")
+system("~/.local/bin/sbpull bdc --unpack dave/abc-development-scratch-project/abc-enchancer-gene-prediction abc-enchancer-gene-prediction-wf.cwl")
+
+```
+
+## Review workflow with tidycwl
+
+```{r, message=FALSE}
+require(tidycwl)
+require(tidyverse)
+require(knitr)
+
+flow = read_cwl_yaml("abc-enchancer-gene-prediction-wf.cwl")
+
+flow %>%
+  parse_inputs() %>% 
+  select(id, doc, `sbg:fileTypes`) %>% 
+  kable()
 
 ```
 
 
+```{r, message=FALSE}
+flow %>% 
+  parse_outputs() %>% 
+  select(id, doc)%>% 
+  kable()
+```
 

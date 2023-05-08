@@ -61,7 +61,7 @@ requirements:
       --outDir ./ \
       --chrom_sizes $(inputs.chr_sizes.path) \
       --regions_blocklist $(inputs.regions_blocklist.path) \
-      --regions_includelist $(inputs.regions_includelist) \
+      --regions_includelist $(inputs.regions_includelist.path) \
       --peakExtendFromSummit 250 \
       --nStrongestPeaks 3000 
 - class: InlineJavascriptRequirement
@@ -113,25 +113,25 @@ baseCommand:
 hints:
 - class: sbg:SaveLogs
   value: '*.sh'
-id: dave/abc-development-scratch-project/makecandidateregions/16
+id: dave/abc-development-scratch-project/makecandidateregions/17
 sbg:appVersion:
 - v1.2
-sbg:content_hash: a80fdb43ca92cb22d4c0c67ec03c606920a99f1cde8f77ab7576396f34c46301c
+sbg:content_hash: afd7e9900a2e141b3cb49fcbca72c2105cdab60ca6266a077e3ddfd37d2c175fd
 sbg:contributors:
 - dave
 - andrewblair
 sbg:createdBy: andrewblair
 sbg:createdOn: 1682057247
-sbg:id: dave/abc-development-scratch-project/makecandidateregions/16
+sbg:id: dave/abc-development-scratch-project/makecandidateregions/17
 sbg:image_url:
-sbg:latestRevision: 16
+sbg:latestRevision: 17
 sbg:modifiedBy: dave
-sbg:modifiedOn: 1683553291
+sbg:modifiedOn: 1683554119
 sbg:project: dave/abc-development-scratch-project
 sbg:projectName: ABC - Development Scratch Project
 sbg:publisher: sbg
-sbg:revision: 16
-sbg:revisionNotes: python3 now
+sbg:revision: 17
+sbg:revisionNotes: fix include list path
 sbg:revisionsInfo:
 - sbg:modifiedBy: andrewblair
   sbg:modifiedOn: 1682057247
@@ -226,6 +226,10 @@ sbg:revisionsInfo:
   sbg:modifiedOn: 1683553291
   sbg:revision: 16
   sbg:revisionNotes: python3 now
+- sbg:modifiedBy: dave
+  sbg:modifiedOn: 1683554119
+  sbg:revision: 17
+  sbg:revisionNotes: fix include list path
 sbg:sbgMaintained: false
 sbg:validationErrors: []
 sbg:workflowLanguage: CWL
