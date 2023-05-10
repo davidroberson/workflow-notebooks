@@ -11,6 +11,9 @@ enhancer-gene predictions using ABC model (Fulco, Nasser et al, Nature
 Genetics
 2019)](https://github.com/broadinstitute/ABC-Enhancer-Gene-Prediction)
 
+![](https://view.commonwl.org/git/9ed3558f69d39d97022236e14792c75101b9b4ae/abc_enhancer_gene_prediction/abc-enchancer-gene-prediction-wf.cwl?format=svg)
+
+
 ## Pull CWL files from BioData Catalyst Powered by Seven Bridges
 
 ``` r
